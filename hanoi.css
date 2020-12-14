@@ -1,0 +1,36 @@
+#main{
+    display: flex;
+}
+.div{
+    margin: 5px 10px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    background-color: blue;
+    height: 300px;
+    width: 300px;
+}
+
+.pilar{
+    position: absolute;
+    background-color: red;
+    width: 15px;
+    height: 100px;
+}
+
+.disco{
+    margin-top: 5px;
+    background-color: purple;
+    height: 20px;
+    z-index: 0;
+}
+
+#maior {
+    width: 150px;
+}
+#medio{
+    width: 100px;
+}
+#pequeno{
+    width: 50px;
+}
