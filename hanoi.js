@@ -36,7 +36,7 @@ offset.addEventListener('click', funcao)
 
 end.addEventListener('click', funcao)
 
-
+//
 
 // let divs = document.querySelectorAll('.div')
 // console.log(divs)
