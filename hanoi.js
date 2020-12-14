@@ -31,6 +31,10 @@ const medio = document.getElementById('medio').clientWidth
 const pequeno = document.getElementById('pequeno').clientWidth
 
 
+let count = 0
+const header = document.getElementById('header')
+
+
 const pegadisco = (e)=>{
     if(e.target.childElementCount > 1){
     estadomouse = e.target.lastElementChild}
@@ -39,10 +43,14 @@ const soltadisco = (discoasersolto, destino)=>{
     if(destino.childElementCount === 1){
 
         destino.appendChild(discoasersolto)
+        count++
+        header.innerText = count
     }
     if(discoasersolto.clientWidth < destino.lastElementChild.clientWidth){
         console.log(discoasersolto.clientWidth)
         destino.appendChild(discoasersolto)
+        count++
+        header.innerText = count
     }
     else{console.log('erro')}
 }
