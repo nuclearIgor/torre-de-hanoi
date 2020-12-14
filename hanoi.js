@@ -1,4 +1,5 @@
 const main = document.getElementById('main')
+const button = document.getElementById('button')
 
 const criadiv =(elemento, classe, pai, id)=>{
     let criaelemento = document.createElement(elemento)
@@ -26,9 +27,9 @@ criadiv('div', 'div', main,'end')
 const end = document.getElementById('end')
 criadiv('div', 'pilar', end)
 
-const maior = document.getElementById('maior').clientWidth
-const medio = document.getElementById('medio').clientWidth
-const pequeno = document.getElementById('pequeno').clientWidth
+// const maior = document.getElementById('maior').clientWidth
+// const medio = document.getElementById('medio').clientWidth
+// const pequeno = document.getElementById('pequeno').clientWidth
 
 
 let count = 0
@@ -39,25 +40,27 @@ const pegadisco = (e)=>{
     if(e.target.childElementCount > 1){
     estadomouse = e.target.lastElementChild}
 }
+
 const soltadisco = (discoasersolto, destino)=>{
     if(destino.childElementCount === 1){
 
         destino.appendChild(discoasersolto)
         count++
-        header.innerText = count
+        header.innerText += count
     }
     if(discoasersolto.clientWidth < destino.lastElementChild.clientWidth){
         console.log(discoasersolto.clientWidth)
         destino.appendChild(discoasersolto)
         count++
-        header.innerText = count
+        header.innerText += count
     }
     else{console.log('erro')}
+    victoria()
 }
 
 let estadomouse = null
 
-function movimentacao(e){
+const movimentacao = (e) => {
     // console.log(e.target.lastElementChild)
 
     if(estadomouse === null){
@@ -74,11 +77,29 @@ function movimentacao(e){
     }
     console.log(estadomouse)
     return estadomouse
-    
+
 }
 
+//elemento, classe, pai, id
+criadiv('section', 'flex', document.body, 'container')
+const container = document.getElementById('container')
+
+criadiv('div','hidden', container, 'resultado')
 
 
+const victoria = () => {
+    let output = false
+    //verificar quantos filho a DIV (end) tem, se for === 4 WIN
+    if(end.childElementCount === 4) {
+        output = true
+        container.innerText = "WIN"
+        container.classList.add('info')
+        container.classList.remove('hidden')
+        button.classList.remove('hidden')
+    }
+
+    console.log(output)
+}
 
 
 
