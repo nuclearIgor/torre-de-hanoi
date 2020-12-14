@@ -26,15 +26,78 @@ criadiv('div', 'div', main,'end')
 const end = document.getElementById('end')
 criadiv('div', 'pilar', end)
 
-function funcao(e){
-    console.log(e.target.lastElementChild)
+const maior = document.getElementById('maior').clientWidth
+const medio = document.getElementById('medio').clientWidth
+const pequeno = document.getElementById('pequeno').clientWidth
+
+
+const pegadisco = (e)=>{
+    if(e.target.childElementCount > 1){
+    estadomouse = e.target.lastElementChild}
+}
+const soltadisco = (discoasersolto, destino)=>{
+    if(destino.childElementCount === 1){
+
+        destino.appendChild(discoasersolto)
+    }
+    if(discoasersolto.clientWidth < destino.lastElementChild.clientWidth){
+        console.log(discoasersolto.clientWidth)
+        destino.appendChild(discoasersolto)
+    }
+    else{console.log('erro')}
 }
 
-start.addEventListener('click', funcao)
+let estadomouse = null
 
-offset.addEventListener('click', funcao)
+function movimentacao(e){
+    // console.log(e.target.lastElementChild)
 
-end.addEventListener('click', funcao)
+    if(estadomouse === null){
+        pegadisco(e)
+        console.log('1')
+    }
+    else if(estadomouse !== null){
+
+        let target = e.target
+        console.log(2)
+
+        soltadisco(estadomouse, target)
+        estadomouse = null
+    }
+    console.log(estadomouse)
+    return estadomouse
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+start.addEventListener('click', movimentacao)
+
+offset.addEventListener('click', movimentacao)
+
+end.addEventListener('click', movimentacao)
 
 //
 
@@ -44,4 +107,4 @@ end.addEventListener('click', funcao)
 // for(let i = 0; i < divs.length; i++){
 //     divs[i].addEventListener('click', funcao)
 // }
-console.log('igor')
+
