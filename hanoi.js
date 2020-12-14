@@ -44,3 +44,4 @@ end.addEventListener('click', funcao)
 // for(let i = 0; i < divs.length; i++){
 //     divs[i].addEventListener('click', funcao)
 // }
+console.log('igor')
