@@ -1,11 +1,11 @@
 const main = document.getElementById('main')
 const button = document.getElementById('button')
 
-const criadiv =(elemento, classe, pai, id)=>{
+const criadiv =(elemento, classe, pai, id) => {
     let criaelemento = document.createElement(elemento)
     criaelemento.classList.add(classe)
     criaelemento.id = id
-    
+
     return pai.appendChild(criaelemento)
 
 }
@@ -46,12 +46,12 @@ const header = document.getElementById('header')
 criadiv('span', 'span', header,'jogadas')
 const jogadas = document.getElementById('jogadas')
 
-const pegadisco = (e)=>{
+const pegadisco = (e) => {
     if(e.target.childElementCount > 1){
     estadomouse = e.target.lastElementChild}
 }
 
-const soltadisco = (discoasersolto, destino)=>{
+const soltadisco = (discoasersolto, destino) => {
     if(destino.childElementCount === 1){
 
         destino.appendChild(discoasersolto)
@@ -71,7 +71,6 @@ const soltadisco = (discoasersolto, destino)=>{
 let estadomouse = null
 
 const movimentacao = (e) => {
-    // console.log(e.target.lastElementChild)
 
     if(estadomouse === null){
         pegadisco(e)
@@ -90,16 +89,13 @@ const movimentacao = (e) => {
 
 }
 
-//elemento, classe, pai, id
 criadiv('section', 'flex', document.body, 'container')
 const container = document.getElementById('container')
 
 criadiv('div','hidden', container, 'resultado')
 
-
 const victoria = () => {
     let output = false
-    //verificar quantos filho a DIV (end) tem, se for === 4 WIN
     if(end.childElementCount === 4) {
         output = true
         container.innerText = "WIN"
@@ -110,26 +106,6 @@ const victoria = () => {
 
     console.log(output)
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 start.addEventListener('click', movimentacao)
