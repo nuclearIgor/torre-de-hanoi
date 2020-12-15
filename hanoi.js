@@ -18,6 +18,13 @@ criadiv('div', 'disco', start, 'maior')
 criadiv('div', 'disco', start, 'medio')
 criadiv('div', 'disco', start, 'pequeno')
 
+const discopequeno = document.getElementById('pequeno')
+const discomedio = document.getElementById('medio')
+const discogrande = document.getElementById('maior')
+
+
+
+
 criadiv('div', 'div', main,'offset')
 const offset = document.getElementById('offset')
 criadiv('div', 'pilar', offset)
@@ -43,7 +50,7 @@ pequeno.style.height = "20px";
 
 let count = 0
 const header = document.getElementById('header')
-criadiv('span', 'span', header,'jogadas')
+criadiv('span', 'hidden', header,'jogadas')
 const jogadas = document.getElementById('jogadas')
 
 const pegadisco = (e) => {
@@ -65,6 +72,7 @@ const soltadisco = (discoasersolto, destino) => {
         jogadas.innerText = count
     }
     else{console.log('erro')}
+    jogadas.classList.remove('hidden')
     victoria()
 }
 
@@ -123,3 +131,12 @@ end.addEventListener('click', movimentacao)
 //     divs[i].addEventListener('click', funcao)
 // }
 
+const resetgame =()=>{
+    start.appendChild(discogrande)
+    start.appendChild(discomedio)
+    start.appendChild(discopequeno)
+    count = 0
+    return jogadas.innerText = count
+}
+
+button.addEventListener('click', resetgame)
