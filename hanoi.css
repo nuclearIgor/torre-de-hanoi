@@ -3,31 +3,38 @@ body,html,main,div {
     margin: 0;
     box-sizing: border-box;
     font-size: 16px;
+    background-color: #6c7986;
 }
 
-#main{
+#main {
     display: flex;
+    justify-content: center;
 }
-.div{
+
+h1 {
+    text-align: center;
+}
+
+.div {
     margin: 5px 10px;
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
-    background-color: blue;
+    background-color: #d8d8d8;
     height: 300px;
     width: 300px;
 }
 
-.pilar{
+.pilar {
     position: absolute;
-    background-color: red;
+    background-color: #1f1f1f;
     width: 15px;
-    height: 100px;
+    height: 120px;
 }
 
-.disco{
+.disco {
     margin-top: 5px;
-    background-color: purple;
+    background-color: #3F51B5;
     height: 20px;
     z-index: 0;
 }
@@ -45,9 +52,16 @@ body,html,main,div {
 #maior {
     width: 150px;
 }
-#medio{
+#medio {
     width: 100px;
 }
-#pequeno{
+/* #pequeno {
     width: 50px;
+} */
+
+
+@media only screen and (max-width: 960px){
+    #main {
+        display: grid;
+    }
 }
