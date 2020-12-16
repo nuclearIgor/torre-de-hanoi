@@ -18,6 +18,7 @@ h1 {
 }
 
 .header-container {
+    max-width: 1000px;
     height: 78px;
     width: 100vw;
     margin: 1vh auto;
