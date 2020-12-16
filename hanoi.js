@@ -77,7 +77,7 @@ const soltadisco = (discoasersolto, destino) => {
         messageBox.innerText =''
     }
     else{
-        messageBox.innerText = 'Você só pode soltar o disco sobre um disco maior'
+        messageBox.innerText = 'Você só pode soltar o disco sobre um disco menor'
     }
     jogadas.classList.remove('hidden')
     victoria()
