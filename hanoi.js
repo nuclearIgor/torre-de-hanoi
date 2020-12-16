@@ -39,14 +39,24 @@ const jogadas = document.getElementById('jogadas')
 const mao = document.getElementById('mao')
 const headerContainer = document.querySelector('.flex-header-container')
 
+const messageBox = document.getElementById('mensagemerro')
+
+console.log(messageBox)
+
+
 /**/
 let estadomouse = null
 const pegadisco = (e) => {
     if(e.currentTarget.childElementCount > 1){
-    estadomouse = e.currentTarget.lastElementChild}
+    estadomouse = e.currentTarget.lastElementChild
     mao.innerText =''
     headerContainer.classList.remove('hidden')
+    messageBox.innerText =''
     mao.appendChild(estadomouse)
+    }
+    else{
+        messageBox.innerText = 'Você deve selecionar um disco'
+    }
 }
 
 /**/
@@ -57,15 +67,17 @@ const soltadisco = (discoasersolto, destino) => {
         count++
         jogadas.innerText = `Jogadas: ${count}`
         estadomouse = null
+        messageBox.innerText =''
     }
     else if(discoasersolto.clientWidth < destino.lastElementChild.clientWidth){
         destino.appendChild(discoasersolto)
         count++
         jogadas.innerText = `Jogadas: ${count}`
         estadomouse = null
+        messageBox.innerText =''
     }
     else{
-        console.log('erro')
+        messageBox.innerText = 'Você só pode soltar o disco sobre um disco maior'
     }
     jogadas.classList.remove('hidden')
     victoria()
@@ -126,3 +138,7 @@ const resetgame =()=>{
 }
 
 button.addEventListener('click', resetgame)
+
+criadiv('footer', 'a', document.body, 'footer')
+const footer = document.getElementById('footer')
+footer.innerText = "Desenvolvido por Igor & Rodolfo"
