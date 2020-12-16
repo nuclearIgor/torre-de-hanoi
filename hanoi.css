@@ -4,8 +4,9 @@ body,html,main,div, section, button, footer {
     box-sizing: border-box;
 }
 
-body{
+body {
     font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: #009688;
     background-image: linear-gradient(90deg, #3f9974, rgb(15 58 112));
 }
@@ -16,40 +17,41 @@ h1 {
     color:#f5f3f0;
 }
 
-.flex-header-container{
+.header-container {
     height: 78px;
     width: 100vw;
     margin: 1vh auto;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
     font-weight: 700;
 }
-.infobox{
+
+.header-container-infobox {
     text-align: center;
     width: 300px;
     color: white;
 }
-#mao{
+
+#mao {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.mao-classe::before {
+.header-container-mao::before {
     content: 'Disco selecionado:';
 }
-.message-box{
+
+.message-box {
     color:#d5dea5
-    
 }
+
 #main {
     display: flex;
     justify-content: center;
 }
-
 
 /* .box-clicavel::before{
     content: '';
@@ -81,25 +83,27 @@ h1 {
     position: absolute;
     background-color: #4691ff;
     background-image: linear-gradient(90deg, #5693d2, rgb(90 70 255));
-    width: 15px;
-    height: 120px;
+    width: 25px;
+    height: 140px;
 }
 
 .disco {
-    margin-top: 5px;
-    height: 20px;
+    margin-top: 3px;
+    height: 30px;
     z-index: 0;
 }
 
-#pequeno{
+#pequeno {
     width: 30%;
     background-image: linear-gradient(180deg, rgb(28 0 255), rgb(55 40 40));
 }
-#medio{
+
+#medio {
     width: 50%;
     background-image: linear-gradient(180deg, #4dff04, rgb(39 49 35));
 }
-#maior{
+
+#grande {
     width: 70%;
     background-image: linear-gradient(180deg, #ff7804, rgb(132 12 12));
 }
@@ -128,14 +132,12 @@ h1 {
     border: solid 1px #009688;
 }
 
-#jogadas{
+#jogadas {
     padding: 5px 5px;
     margin-left: 10px;
 }
-/* #jogadas::before{
-    content: 'Jogadas: ';
-} */
-#container{
+
+#container {
     margin: 0 auto;
     display: flex;
     width: 90vw;
@@ -143,6 +145,7 @@ h1 {
     height: 1.5rem;
     margin-bottom: 5px;
 }
+
 #resultado {
     border: 1px solid #080808;
     border-radius: 5%;
@@ -153,7 +156,6 @@ h1 {
     text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-bottom: 2vh;
     height: 1.5rem;
 }
@@ -168,13 +170,14 @@ footer {
     position: fixed;
 }
 
-@media only screen and (max-width: 767px){
+@media only screen and (max-width: 767px) {
     #main {
         display: flex;
         flex-direction: column;
         width: 100vw;
     }
-    .box-clicavel{
+
+    .box-clicavel {
         display: flex;
          flex-direction: column-reverse;
         align-items: center;
@@ -182,42 +185,30 @@ footer {
         height: 21vh;
         width: 80vw;
     }
-    /* #flex-header-container{
-        height: 78px;
-        width: 80vw;
-        margin: 1vh auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-    } */
-    #headertext{
-        align-self: start;
-    }
-    
-    #jogadas{
-        align-self: end;
-    }
+
     #button{
         margin: 1vh auto;
     }
+
     #containder{
         display: flex;
         width: 100vw;
         margin-bottom: 1vh;
     }
 
-    .infobox{
+    .header-container-infobox{
         height: 6vh;
     }
+
     .message-box{
         font-size: 0.9rem;
     }
-    #mao {
 
+    #mao {
         width: 80vw;
-        
     }
-    .flex-header-container{
+
+    .header-container{
         flex-direction: column;
         align-items: center;
     }
