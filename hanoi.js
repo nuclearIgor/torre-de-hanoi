@@ -10,19 +10,22 @@ const criadiv =(elemento, classe, pai, id) => {
 
 }
 
+/* */
 criadiv('div', 'box-clicavel', main,'start')
 const start = document.getElementById('start')
 
 criadiv('div', 'pilar', start)
-criadiv('div', 'disco', start, 'maior')
+
+criadiv('div', 'disco', start, 'grande')
+const discogrande = document.getElementById('grande')
+
 criadiv('div', 'disco', start, 'medio')
-criadiv('div', 'disco', start, 'pequeno')
-
-const discopequeno = document.getElementById('pequeno')
 const discomedio = document.getElementById('medio')
-const discogrande = document.getElementById('maior')
 
+criadiv('div', 'disco', start, 'pequeno')
+const discopequeno = document.getElementById('pequeno')
 
+/* */
 criadiv('div', 'box-clicavel', main,'offset')
 const offset = document.getElementById('offset')
 criadiv('div', 'pilar', offset)
@@ -31,18 +34,16 @@ criadiv('div', 'box-clicavel', main,'end')
 const end = document.getElementById('end')
 criadiv('div', 'pilar', end)
 
+/* */
 let count = 0
 const header = document.getElementById('header')
 criadiv('span', 'hidden', header,'jogadas')
 const jogadas = document.getElementById('jogadas')
 
 const mao = document.getElementById('mao')
-const headerContainer = document.querySelector('.flex-header-container')
+const headerContainer = document.querySelector('.header-container')
 
-const messageBox = document.getElementById('mensagemerro')
-
-console.log(messageBox)
-
+const messageBox = document.getElementById('mensagem-erro')
 
 /**/
 let estadomouse = null
@@ -77,7 +78,7 @@ const soltadisco = (discoasersolto, destino) => {
         messageBox.innerText =''
     }
     else{
-        messageBox.innerText = 'Você só pode soltar o disco sobre um disco maior'
+        messageBox.innerText = 'Você só pode soltar este disco sobre um disco menor'
     }
     jogadas.classList.remove('hidden')
     victoria()
@@ -89,13 +90,15 @@ const movimentacao = (e) => {
     if(estadomouse === null){
         pegadisco(e)
     }
-    else if(estadomouse !== null){
+    else if(estadomouse !== null) {
 
         let target = e.currentTarget
         soltadisco(estadomouse, target)
 
     }
+
     mao.classList.remove('hidden')
+    headerContainer.classList.remove('hidden')
     return estadomouse
 
 }
@@ -125,7 +128,8 @@ offset.addEventListener('click', movimentacao)
 
 end.addEventListener('click', movimentacao)
 
-const resetgame =()=>{
+/* */
+const resetgame = () => {
     start.appendChild(discogrande)
     start.appendChild(discomedio)
     start.appendChild(discopequeno)
