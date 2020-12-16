@@ -27,20 +27,24 @@ h1 {
     color: white;
     font-weight: 700;
 }
-
-#header{
-    margin-left: 2vw;
-    color: white;
- }
-
- #mao {
+.infobox{
+    text-align: center;
     width: 300px;
- }
+    color: white;
+}
+#mao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .mao-classe::before {
     content: 'Disco selecionado:';
 }
-
+.message-box{
+    color:#d5dea5
+    
+}
 #main {
     display: flex;
     justify-content: center;
@@ -136,6 +140,8 @@ h1 {
     display: flex;
     width: 90vw;
     justify-content: center;
+    height: 1.5rem;
+    margin-bottom: 5px;
 }
 #resultado {
     border: 1px solid #080808;
@@ -148,14 +154,19 @@ h1 {
     font-size: 1.5rem;
     font-weight: bold;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 2vh;
+    height: 1.5rem;
 }
 
 footer {
+    height: 30px;
     color: #080808;
     width: 100%;
-    position: fixed;
     bottom: 0;
+    margin-top: 1vh;
+    height: 1rem;
     text-align: center;
+    
 }
 
 @media only screen and (max-width: 767px){
@@ -196,11 +207,16 @@ footer {
         margin-bottom: 1vh;
     }
 
+    .infobox{
+        height: 6vh;
+    }
+    .message-box{
+        font-size: 0.9rem;
+    }
     #mao {
+
         width: 80vw;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        
     }
     .flex-header-container{
         flex-direction: column;
